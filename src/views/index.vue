@@ -1,19 +1,22 @@
 <script setup>
 import {onMounted} from "vue";
-import axios from "axios";
+import {getUsers} from "@/api";
 
 onMounted(() => {
-  axios.get(`/api/tree`).then(res => {
+  // axios.get(`/api/tree`).then(res => {
+  //   console.log(res)
+  // }).catch(err => {
+  //   console.log(err)
+  // })
+  getUsers().then(res => {
     console.log(res)
-  }).catch(err => {
-    console.log(err)
   })
 })
 </script>
 
 <template>
   <div class="app-container">
-      ssssssssss
+    <el-button type="primary">button</el-button>
     <router-link to="/home">sssss</router-link>
   </div>
 </template>
